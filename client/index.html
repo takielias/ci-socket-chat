@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <!-- 
+    	The codes are free, but we require linking to our web site.
+    	Why to Link?
+        A true story: one girl didn't set a link and had no decent date for two years, 
+        and another guy set a link and got a top ranking in Google! 
+    	Where to Put the Link?
+    	home, about, credits... or in a good page that you want
+    	THANK YOU MY FRIEND!
+    -->
+    <title>Chillao</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="asset/js/jquery.min.js"></script>
+    <link href="asset/css/bootstrap.min.css" rel="stylesheet">
+    <link href="asset/css/mstyle.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <link href="asset/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <div class="container">
+        <div class="panel messages-panel">
+            <div class="contacts-list">
+                <div class="inbox-categories">
+                    <div data-toggle="tab" data-target="#rml">Room</div>
+                    <div id="totalroommsg" data-toggle="tab" data-target="#status">Status <span style = "visibility:hidden;" class="button" id ="ttcount" >0</span></div>
+                </div>
+    
+                <div class="tab-content">
+    
+                    <div id="rml" class="contacts-outter-wrapper tab-pane active">
+    
+                        <div class="contacts-outter">
+    
+                            <ul class="list-unstyled contacts" id="roomlist">
+    
+                                <li data-toggle="tab" class="active">
+    
+                                    <div class="vcentered info-combo">
+                                        <h3 class="no-margin-bottom name">Bangladesh</h3>
+                                    </div>
+    
+                                </li>
+    
+                                <li data-toggle="tab">
+    
+                                    <div class="vcentered info-combo">
+                                        <h3 class="no-margin-bottom name">India</h3>
+                                    </div>
+    
+                                </li>
+    
+                                <li data-toggle="tab">
+    
+                                    <div class="vcentered info-combo">
+                                        <h3 class="no-margin-bottom name">Pakistan</h3>
+                                    </div>
+    
+                                </li>
+    
+                                <li data-toggle="tab">
+    
+                                    <div class="vcentered info-combo">
+                                        <h3 class="no-margin-bottom name">Nepal</h3>
+                                    </div>
+    
+                                </li>
+    
+                                <li data-toggle="tab">
+    
+                                    <div class="vcentered info-combo">
+                                        <h3 class="no-margin-bottom name">Maldives</h3>
+                                    </div>
+    
+                                </li>
+    
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div id="status" class="contacts-outter-wrapper tab-pane">
+    
+                        <div class="contacts-outter">
+    
+                            <ul class="list-unstyled contacts success" id="tab-contacts-outter">
+    
+                            </ul>
+    
+                        </div>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+            <div class="tab-content" id="allmsg">
+    
+            </div>
+    
+        </div>
+    </div>
+    
+    <div style="display:none; background: #9cc2cb;" id="contextMenu">
+    
+        <table class="table table-hover" style="cursor: pointer;">
+            <tr>
+                <td>
+                    <div class="ContextItem">Private</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ContextItem">Kick</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ContextItem">Profile</div>
+                </td>
+            </tr>
+        </table>
+    
+    </div>
+    
+
+    <input type="hidden" id="session" value="<?php echo $this->session->userdata('username'); ?>">
+
+    <input type="hidden" id="token" value="<?php echo $this->session->userdata('token'); ?>">
+
+    <script src="asset/js/bootstrap.min.js"></script>
+
+    <!-- <script src="node_modules/traceur/dist/commonjs/traceur.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/es6-module-loader/dist/es6-module-loader-dev.js"></script>
+
+    <script>
+     System.import('./js/custom.js')
+    </script> -->
+
+    <script src="./bundle.js"></script>
+
+</body>
+
+</html>

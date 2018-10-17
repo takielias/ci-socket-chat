@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./asset/js/bootstrap-combined.min.css">
+    <script src="./asset/js/jquery-1.9.1.js"></script>
+    <script src="./asset/js/bootstrap.min.js" type="text/javascript"></script>
+    <style type="text/css">
+
+        .nav-tabs > li .close {
+            margin: -2px 0 0 10px;
+            font-size: 18px;
+        }
+
+        .marginBottom {
+            margin-bottom: 1px !important;
+        }
+
+        .operationDiv {
+            padding: 5px 10px 5px 5px;
+        }
+
+        .operationDivWrapper {
+            margin-top: -1px;
+        }
+
+        .leftMenu {
+            height: 70%;
+            background-color: #E6E6E6;
+            border-right: 2px solid #BFBFBF;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="container-fluid ">
+
+    <ul class="nav nav-tabs marginBottom" id="myTab">
+
+        <li class="active "><a href="#home" class="backgroundRed">Room List All room For Chat</a>
+
+        </li>
+<!--        <li>-->
+<!--            <a href="#profile">-->
+<!--                <button class="close closeTab" type="button">×</button>Sent</a>-->
+<!---->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="#messages">-->
+<!--                <button class="close closeTab" type="button">×</button>Compose</a>-->
+<!---->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="#settings">-->
+<!--                <button class="close closeTab" type="button">×</button> Re:this is test subject</a>-->
+<!---->
+<!--        </li>-->
+    </ul>
+<!--    -->
+<!--    <div>-->
+<!--        <div class="operationDiv">-->
+<!--            <button type="submit" class="btn" id="composeButton">Compose</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    -->
+    <div class="row-fluid ">
+        <div class="row-fluid ">
+            <div class="span2 leftMenu">
+                <ul class="nav nav-pills nav-stacked" id="roomlist">
+<!--                    <li class="active"> <a href="#">Inbox</a>-->
+<!---->
+<!--                    </li>-->
+<!--                    <li><a href="#">Sent</a>-->
+<!---->
+<!--                    </li>-->
+<!--                    <li><a href="#">Trash</a>-->
+<!---->
+<!--                    </li>-->
+                    <li><a href="#">Bangladesh</a></li>
+                    <li><a href="#">Indian</a></li>
+                    <li><a href="#">Pakistan</a></li>
+
+
+                </ul>
+            </div>
+
+            <div class="tab-content span4" id="tab-content">
+
+            </div>
+
+        </div>
+    </div>
+<!--    -->
+</div>
+
+<input id="bd" placeholder="Text"/>
+
+<input id="in" placeholder="Text"/>
+
+<input id="pak" placeholder="Text"/>
+
+<script src="./js/Main.js"></script>
+</body>
+</html>

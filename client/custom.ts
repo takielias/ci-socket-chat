@@ -30,7 +30,7 @@ window.onload = function () {
 	// let wsUrl = "chilro.com"; 
 
 
-	let websocket_server = new WebSocket("ws://" + wsUrl + ":5501/");
+	let websocket_server = new WebSocket("ws://" + wsUrl + ":8282/");
 
 	let mobj = new wsaction(websocket_server, siteUrl, session.value, token.value)
 

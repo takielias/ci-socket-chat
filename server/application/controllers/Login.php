@@ -55,6 +55,7 @@ class Login extends CI_Controller
                         'username' => $query->username,
                         'email' => $query->email,
                         'power' => $query->power,
+                        'cc' => $query->cc
                     );
 
                     $data = array(

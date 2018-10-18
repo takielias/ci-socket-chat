@@ -112,7 +112,7 @@ window.onload = function () {
     var wsUrl = "localhost";
     // let siteUrl = "chilro.com";
     // let wsUrl = "chilro.com"; 
-    var websocket_server = new WebSocket("ws://" + wsUrl + ":5501/");
+    var websocket_server = new WebSocket("ws://" + wsUrl + ":8282/");
     var mobj = new wsaction_1.wsaction(websocket_server, siteUrl, session.value, token.value);
     function mContextMenu(e) {
         var liemele = e.currentTarget;

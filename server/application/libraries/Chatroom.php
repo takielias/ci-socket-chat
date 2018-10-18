@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+use Ratchet\ConnectionInterface;
+
 class Chatroom
 {
     public $RoomName;
@@ -43,7 +45,7 @@ class Chatroom
         $this->RoomName = $RoomName;
     }
 
-    public function join($data, $client)
+    public function join($data, ConnectionInterface $client)
     {
         if (in_array($data->user_id, $this->KickedUser)) {
 
@@ -100,8 +102,11 @@ class Chatroom
 
     }
 
-    public function leave()
+    public function leave($data, ConnectionInterface $client)
     {
+        $this->RemoveFromList($client);
+
+        $this->SendMsgRoom($this->RoomName, $this->RoomName, $data->user_id . " has left.");
 
     }
 
@@ -119,6 +124,30 @@ class Chatroom
             )));
 
         }
+    }
+
+    private function SendMsgRoom($sender, $receiver, $msg)
+    {
+
+        if ($this->RoomName == $sender) {
+
+            foreach ($this->RoomUserObjList as $client) {
+
+                $response_to = $msg;
+
+                $client->send(json_encode(array(
+                    "type" => "roomchat",
+                    "room_name" => $this->RoomName,
+                    "sender" => $sender,
+                    "receiver" => $receiver,
+                    "power" => 0,
+                    "msg" => $response_to
+                )));
+
+            }
+        }
+
+
     }
 
     public function GetRoomUserList()
@@ -140,9 +169,15 @@ class Chatroom
 
     private function RemoveFromList($user)
     {
-        $key = array_search($user, $this->RoomUserList);
+
+        $key = array_search($user->username, $this->RoomUserList);
         if ($key !== false) {
             unset($this->RoomUserList[$key]);
+        }
+
+        $key = array_search($user, $this->RoomUserObjList);
+        if ($key !== false) {
+            unset($this->RoomUserObjList[$key]);
         }
     }
 }

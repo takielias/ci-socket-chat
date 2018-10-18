@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use Ratchet\ConnectionInterface;
+
 class Welcome extends MY_Controller
 {
 
@@ -29,7 +31,7 @@ class Welcome extends MY_Controller
 
     }
 
-    public function _auth($datas = null, $client)
+    public function _auth($datas = null, ConnectionInterface $client)
     {
         // Here you can verify everything you want to perform user login.
         // However, method must return integer (client ID) if auth succedeed and false if not.
@@ -83,7 +85,7 @@ class Welcome extends MY_Controller
 
     }
 
-    public function _roomjoin($data, $client)
+    public function _roomjoin($data, ConnectionInterface $client)
     {
 
         $room = $this->roomExist($data->room_name);
@@ -107,6 +109,22 @@ class Welcome extends MY_Controller
 
     }
 
+    public function _roomleave($data, ConnectionInterface $client)
+    {
+
+        $room = $this->roomExist($data->room_name);
+
+        if ($room != false) {
+
+            $room->leave($data, $client);
+
+        }
+    }
+
+    public function _roomchat($data, ConnectionInterface $client)
+    {
+
+    }
 
     public
     function index()
@@ -117,6 +135,8 @@ class Welcome extends MY_Controller
         $this->ratchet_websocket->set_callback('close', array($this, '_close'));
         $this->ratchet_websocket->set_callback('citimer', array($this, '_timer'));
         $this->ratchet_websocket->set_callback('roomjoin', array($this, '_roomjoin'));
+        $this->ratchet_websocket->set_callback('roomleave', array($this, '_roomleave'));
+        $this->ratchet_websocket->set_callback('roomchat', array($this, '_roomchat'));
         $this->ratchet_websocket->run();
     }
 

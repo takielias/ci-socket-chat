@@ -12,3 +12,4 @@ packages/*.zip
 packages/*.tar.gz
 woff2/
 vendor
+package-lock.json

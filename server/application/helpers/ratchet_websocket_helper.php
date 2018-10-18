@@ -22,6 +22,20 @@ if (!function_exists('valid_json')) {
 }
 
 
+if (!function_exists('valid_jwt')) {
+
+    /**
+     * Check JWT validity
+     * @method valid_jwt
+     * @param  mixed $token Variable to check
+     * @return Object/false
+     */
+    function valid_jwt($token)
+    {
+        return AUTHORIZATION::validateToken($token);
+    }
+}
+
 if (!function_exists('validate_room_name')) {
 
     /**

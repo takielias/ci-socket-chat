@@ -1,5 +1,6 @@
 {
     "require": {
-        "romainrg/codeigniter-ratchet-websocket": "^1.1"
+        "romainrg/codeigniter-ratchet-websocket": "^1.1",
+        "romainrg/ratchet_client": "^1.0"
     }
 }
